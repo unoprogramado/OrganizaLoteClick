@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OrganizadorDeLotesDialogBase</class>
+ <widget class="QDialog" name="OrganizadorDeLotesDialogBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>OrganizadorDeLotes</string>
+  </property>
+  <widget class="QWidget" name="formLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>391</width>
+     <height>311</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="conexaoLabel">
+      <property name="text">
+       <string>Conexao</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QComboBox" name="cmbConexao"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="insQuadraLabel">
+      <property name="text">
+       <string>InsQuadra</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QSpinBox" name="spinInsQuadra">
+      <property name="maximum">
+       <number>900000000</number>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="ordemAntigaLabel">
+      <property name="text">
+       <string>Ordem Antiga</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QSpinBox" name="spinOrdemPrimeira"/>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="insQuadraLabel_2">
+      <property name="text">
+       <string>InsQuadra</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QSpinBox" name="spinInsQuadraConfirma">
+      <property name="maximum">
+       <number>90000000</number>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QPushButton" name="btnExecutar">
+      <property name="text">
+       <string>Organizar Ordem</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="btnSelecionarQuadra">
+      <property name="toolTip">
+       <string>Clique aqui e depois em uma quadra no mapa</string>
+      </property>
+      <property name="text">
+       <string>Selecionar Quadra</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

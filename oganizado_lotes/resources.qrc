@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/Oganizado_Lotes" >
+        <file>icon.png</file>
+    </qresource>
+</RCC>
