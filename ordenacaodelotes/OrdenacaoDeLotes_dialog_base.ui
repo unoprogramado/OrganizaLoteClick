@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OrganizadorDeLotesDialogBase</class>
+ <widget class="QDialog" name="OrganizadorDeLotesDialogBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>288</width>
+    <height>236</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Organizador de Lotes</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+        /* Diálogo */
+        QDialog {
+          background-color: #ffffff;
+          border: 1px solid #e0e0e0;
+          border-radius: 12px;
+          padding: 10px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Tipografia */
+        QLabel {
+          color: #263238;
+          font-size: 12px;
+          font-weight: 500;
+        }
+
+        /* Campos de entrada */
+        QLineEdit, QComboBox {
+          background-color: #f5f5f5;
+          border: 1px solid #e0e0e0;
+          border-radius: 4px;
+          padding: 2px 6px;
+          font-size: 12px;
+          min-height: 18px;
+        }
+        QLineEdit:focus, QComboBox:focus {
+          border: 1px solid #2196f3;
+          background-color: #f0f7ff;
+          outline: none;
+        }
+
+        /* Estilo da seta do ComboBox */
+        QComboBox::drop-down {
+          border: none;
+          background: transparent;
+          padding-right: 4px;
+        }
+        QComboBox::down-arrow {
+          image: url(:/icons/arrow_down);
+          width: 8px;
+          height: 8px;
+        }
+
+        /* Botões */
+        QPushButton {
+          background-color: #2196f3;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          padding: 4px 8px;
+          font-weight: 600;
+          font-size: 12px;
+          min-height: 22px;
+          transition: all 0.2s ease-in-out;
+        }
+        QPushButton:hover {
+          background-color: #1976d2;
+        }
+        QPushButton:pressed {
+          background-color: #1565c0;
+          transform: scale(0.98);
+        }
+        QPushButton:disabled {
+          background-color: #b0bec5;
+        }
+
+        /* CheckBox */
+        QCheckBox {
+          color: #455a64;
+          font-size: 11px;
+        }
+
+        /* Display LCD */
+        QLCDNumber {
+          border: 1px solid #b0bec5;
+          border-radius: 4px;
+          background-color: #eceff1;
+          color: #212121;
+        }
+
+        /* Barra de rolagem */
+        QScrollBar:vertical {
+          background: #eceff1;
+          width: 6px;
+          margin: 2px;
+          border-radius: 3px;
+        }
+        QScrollBar::handle:vertical {
+          background: #90a4ae;
+          border-radius: 3px;
+        }
+        QScrollBar::handle:vertical:hover {
+          background: #78909c;
+        }
+      </string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <spacer name="verticalSpacer_top">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>6</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="conexaoLabel">
+       <property name="text">
+        <string>Conexão Postgres</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="cmbConexao">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="ordemAntigaLabel">
+       <property name="text">
+        <string>Nova Ordem</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineOrdemPrimeira">
+       <property name="placeholderText">
+        <string>Digite a nova ordem</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="quadraLabel">
+       <property name="text">
+        <string>Quadra Selecionada</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="lineInsQuadra">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="placeholderText">
+        <string>Quadra selecionada</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <widget class="QPushButton" name="btnSelecionarQuadra">
+       <property name="toolTip">
+        <string>Clique aqui e depois em uma quadra no mapa</string>
+       </property>
+       <property name="text">
+        <string>Selecionar Quadra</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" colspan="2">
+      <widget class="QPushButton" name="btnExecutar">
+       <property name="text">
+        <string>Organizar Ordem</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0" colspan="2">
+      <widget class="QPushButton" name="btnExcluirNovaOrdem">
+       <property name="text">
+        <string>Restaurar Ordem Original</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_bottom">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>6</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
